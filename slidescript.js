@@ -18,11 +18,13 @@ function showSlides(n) {
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
 
+  // Remove "active" class from all slides
   for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+    slides[i].classList.remove("active");
   }
 
-  slides[slideIndex-1].style.display = "block";
+  // Add "active" class to new current slide
+  slides[slideIndex-1].classList.add("active");
 }
 
 // Listen for arrow key presses to change slides

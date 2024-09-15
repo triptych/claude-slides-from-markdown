@@ -1,16 +1,41 @@
 /* CSS styles for slideshow */
 
 .slide {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 4px;
+  background-color: #f2f2f2;
+  transition: opacity 0.3s;
+}
+
+.slide:not(.active) {
   display: none;
+  opacity: 0;
 }
 
-.slide-navigation {
-  text-align: center;
-  margin-top: 10px;
+.slide h1,
+.slide h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #007acc;
 }
 
-.slide-navigation a {
-  display: inline-block;
-  margin: 0 5px;
-  cursor: pointer;
+.slide h3,
+.slide h4,
+.slide h5,
+.slide h6 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.slide pre {
+  padding: 15px;
+  background-color: #f7f7f7;
+  border-radius: 4px;
+}
+
+.slide code {
+  font-size: 16px;
 }

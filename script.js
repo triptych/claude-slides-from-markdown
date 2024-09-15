@@ -55,7 +55,14 @@ function enterFullscreen() {
 }
 
 function exportSlides() {
-  const slides = slidesContainer.innerHTML;
+  let slides = slidesContainer.innerHTML;
+
+  // Add link to CSS file in the <head>
+  slides = `<html><head><link rel="stylesheet" href="slidecss.css"></head><body>${slides}`;
+
+  // Add script tag before closing </body>
+  slides += '<script src="slidescript.js"></script></body></html>';
+
   const blob = new Blob([slides], { type: 'text/html' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');

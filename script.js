@@ -5,6 +5,7 @@ const nextSlideBtn = document.getElementById('nextSlide');
 const fullscreenBtn = document.getElementById('fullscreen');
 const exportBtn = document.getElementById('export');
 const loadFileBtn = document.getElementById('loadFile');
+const saveMarkdownBtn = document.getElementById('saveMarkdown');
 const fileInput = document.getElementById('fileInput');
 
 let currentSlide = 0;
@@ -71,6 +72,19 @@ function exportSlides() {
   a.click();
 }
 
+function saveMarkdown() {
+  const markdownContent = markdown.value;
+  const blob = new Blob([markdownContent], { type: 'text/markdown' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+
+  a.href = url;
+  a.download = 'slides.md';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
 function loadFile() {
   fileInput.click();
 }
@@ -92,6 +106,7 @@ prevSlideBtn.addEventListener('click', goToPrevSlide);
 nextSlideBtn.addEventListener('click', goToNextSlide);
 fullscreenBtn.addEventListener('click', enterFullscreen);
 exportBtn.addEventListener('click', exportSlides);
+saveMarkdownBtn.addEventListener('click', saveMarkdown);
 loadFileBtn.addEventListener('click', loadFile);
 fileInput.addEventListener('change', handleFileSelect);
 

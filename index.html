@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Markdown Slideshow</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="editor">
+      <button id="loadFile">Load Markdown File</button>
+      <input type="file" id="fileInput" accept=".md" style="display: none;">
+      <textarea id="markdown" placeholder="Write your markdown here..."></textarea>
+    </div>
+    <div class="slideshow">
+      <div id="slides"></div>
+      <div class="controls">
+        <button id="prevSlide">Previous</button>
+        <button id="nextSlide">Next</button>
+        <button id="fullscreen">Fullscreen</button>
+        <button id="export">Export</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

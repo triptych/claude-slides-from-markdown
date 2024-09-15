@@ -1,0 +1,16 @@
+/* CSS styles for slideshow */
+
+.slide {
+  display: none;
+}
+
+.slide-navigation {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.slide-navigation a {
+  display: inline-block;
+  margin: 0 5px;
+  cursor: pointer;
+}
